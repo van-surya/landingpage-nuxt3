@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,800;1,900&family=Roboto:ital,wght@0,100;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap");
+body {
+    height: 100vh;
+    background: #020420;
+}
+
+nav {
+    position: fixed;
+    top: 50vh;
+    left: 24px;
+    transform: translateY(-50%);
+    font-family: "Roboto", sans-serif !important;
+    & ul {
+        list-style: none;
+        padding: 0;
+        height: 230px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        border-radius: 50px;
+
+        & li {
+            & a {
+                background: #03d880;
+                border-radius: 32px;
+                display: flex;
+                flex-direction: row;
+                height: 62px;
+                width: 62px;
+                justify-content: center;
+                align-items: center;
+                color: #fff;
+                & svg {
+                    font-size: 22px;
+                }
+                & span {
+                    display: none;
+                }
+            }
+
+            &:hover {
+                & a {
+                    transition: all 0.5s;
+                    width: unset;
+                    padding: 8px;
+                    text-decoration: none;
+                    & svg {
+                        margin-left: 8px;
+                    }
+                    & span {
+                        margin-left: 16px;
+                        margin-right: 8px;
+                        display: block;
+                        font-size: 1.2rem;
+                        margin-bottom: 0;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.light {
+    position: absolute;
+    top: 22px;
+    right: 32px;
+    font-family: "Roboto", sans-serif !important;
+    & button {
+        background: transparent !important;
+        border: none !important;
+        font-size: 2rem;
+        padding: 0;
+        & svg {
+            color: #fff;
+        }
+        &:hover {
+            & svg {
+                transition: all 0.5s ease;
+                color: #03d880;
+            }
+        }
+    }
+}
+
+// hero
+
+.hero {
+    display: flex;
+    height: 100vh;
+
+    & .container {
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    &_image {
+        & img {
+            width: 100%;
+        }
+    }
+
+    &_caption {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        & h1 {
+            font-weight: 600;
+            margin-bottom: 0;
+            font-size: 4.2rem;
+            color: #dde3eb;
+            font-family: "Roboto", sans-serif !important;
+        }
+        & span {
+            font-weight: 500;
+            font-size: 1.75rem;
+            margin-bottom: 0;
+            color: #b3b3b3;
+            font-family: "Poppins", sans-serif;
+        }
+        &_social {
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 16px;
+            margin-top: 16px;
+            & a {
+                color: black;
+                color: #03d880;
+                & svg {
+                    font-size: 1.5rem;
+                    margin-right: 12px;
+                }
+                &:hover {
+                    transition: all 0.5s;
+                    opacity: 0.8;
+                }
+            }
+        }
+        & .btn_play {
+            border-radius: 0;
+            padding: 2px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            font-family: "Roboto", sans-serif !important;
+            & span {
+                text-transform: uppercase;
+                font-size: 1.25rem;
+                margin-left: 16px;
+                color: #fff;
+            }
+            & svg {
+                font-size: 1.5rem;
+                color: #03d880;
+            }
+            &:hover {
+                & span {
+                    color: #03d880;
+                    transition: all 0.5s;
+                }
+                & svg {
+                    transition: all 0.5s;
+                    color: #fff;
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+}
