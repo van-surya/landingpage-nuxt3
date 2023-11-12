@@ -1,0 +1,179 @@
+.portfolio {
+    padding-top: 100px;
+    & h1 {
+        text-align: center;
+        margin-bottom: 0;
+        font-weight: 400;
+        font-family: $font-poppins;
+        cursor: default;
+        & span {
+            font-weight: 600;
+        }
+        &:hover {
+            -webkit-animation: text-shadow-pop-tl 0.6s both;
+            animation: text-shadow-pop-tl 0.6s both;
+        }
+    }
+    & p {
+        text-align: center;
+        font-family: $font-poppins;
+        color: $secondary;
+    }
+    & .card {
+        background: transparent;
+        height: 100%;
+        border: none;
+        // overflow: hidden;
+        padding: 8px;
+        border-radius: 0; 
+        & img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            border-radius: 22px 0 0 0;
+        }
+        &-body {
+            padding: 8px;
+            border-radius: 0 0 22px 0;
+            & h5 {
+                margin-top: 8px;
+                margin-bottom: 0;
+                font-family: $font-poppins;
+                cursor: default;
+                color: $tosca;
+            }
+            & a {
+                text-decoration: none;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                margin-top: 0;
+            }
+        }
+        &:hover {
+            padding: 0;
+            transition: all 0.5s;
+        }
+    }
+    & .pagination_ {
+        display: flex;
+        justify-content: center;
+        margin-top: 2rem;
+        list-style: none;
+        & .page_item {
+            margin-left: 8px;
+            margin-right: 8px;
+            opacity: 0.8;
+            background: $tosca;
+            border: 2px solid transparent;
+            & a {
+                padding: 6px 12px;
+                font-weight: 500;
+                font-family: $font-poppins;
+            }
+            &.active {
+                opacity: 1;
+                color: $dark;
+            }
+            &:hover {
+                border: 2px solid $tosca;
+                background: transparent;
+                transition: all 0.5s;
+            }
+        }
+    }
+}
+
+.dark-mode {
+    & .portfolio {
+        & h1 {
+            color: $light;
+        }
+        & .card {
+            &-body {
+                background: $like-dark;
+                & a {
+                    color: $secondary;
+                }
+            }
+        }
+        & .pagination_ .page_item:hover a {
+            color: $tosca;
+        }
+    }
+}
+
+.light-mode {
+    & .portfolio {
+        & h1 {
+            color: $dark;
+        }
+        & .card {
+            &-body {
+                background: #f6fef7;
+                & a {
+                    color: $secondary;
+                }
+            }
+        }
+    }
+}
+
+@-webkit-keyframes text-shadow-pop-tl {
+    0% {
+        text-shadow:
+            0 0 #555555,
+            0 0 #555555,
+            0 0 #555555,
+            0 0 #555555,
+            0 0 #555555,
+            0 0 #555555,
+            0 0 #555555,
+            0 0 #555555;
+        -webkit-transform: translateX(0) translateY(0);
+        transform: translateX(0) translateY(0);
+    }
+    100% {
+        text-shadow:
+            -1px -1px #555555,
+            -2px -2px #555555,
+            -3px -3px #555555,
+            -4px -4px #555555,
+            -5px -5px #555555,
+            -6px -6px #555555,
+            -7px -7px #555555,
+            -8px -8px #555555;
+        -webkit-transform: translateX(8px) translateY(8px);
+        transform: translateX(8px) translateY(8px);
+    }
+}
+@keyframes text-shadow-pop-tl {
+    0% {
+        text-shadow:
+            0 0 #555555,
+            0 0 #555555,
+            0 0 #555555,
+            0 0 #555555,
+            0 0 #555555,
+            0 0 #555555,
+            0 0 #555555,
+            0 0 #555555;
+        -webkit-transform: translateX(0) translateY(0);
+        transform: translateX(0) translateY(0);
+    }
+    100% {
+        text-shadow:
+            -1px -1px #555555,
+            -2px -2px #555555,
+            -3px -3px #555555,
+            -4px -4px #555555,
+            -5px -5px #555555,
+            -6px -6px #555555,
+            -7px -7px #555555,
+            -8px -8px #555555;
+        -webkit-transform: translateX(8px) translateY(8px);
+        transform: translateX(8px) translateY(8px);
+    }
+}
