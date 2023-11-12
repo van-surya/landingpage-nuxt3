@@ -1,9 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,800;1,900&family=Roboto:ital,wght@0,100;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+$tosca: #03d880; 
+
+.dark-mode {
+    --dark: #020420;
+    --light: #fff;
+    --gray500:#dde3eb;
+    --gray800:#b3b3b3;
+}
+.light-mode {
+    --dark: #fff;
+    --light: #020420;
+    --gray500:#0f1457;
+    --gray800:#1d225b;
+
+}
 body {
     height: 100vh;
-    background: #020420;
+    background: var(--dark);
 }
-
 nav {
     position: fixed;
     top: 50vh;
@@ -21,7 +36,8 @@ nav {
 
         & li {
             & a {
-                background: #03d880;
+                text-decoration: none;
+                background: $tosca;
                 border-radius: 32px;
                 display: flex;
                 flex-direction: row;
@@ -29,8 +45,8 @@ nav {
                 width: 62px;
                 justify-content: center;
                 align-items: center;
-                color: #fff;
-                & svg {
+                color: var(--light);
+                & i {
                     font-size: 22px;
                 }
                 & span {
@@ -43,8 +59,7 @@ nav {
                     transition: all 0.5s;
                     width: unset;
                     padding: 8px;
-                    text-decoration: none;
-                    & svg {
+                    & i {
                         margin-left: 8px;
                     }
                     & span {
@@ -71,13 +86,13 @@ nav {
         border: none !important;
         font-size: 2rem;
         padding: 0;
-        & svg {
-            color: #fff;
+        & i {
+            color: var(--light);
         }
         &:hover {
-            & svg {
+            & i {
                 transition: all 0.5s ease;
-                color: #03d880;
+                color: $tosca;
             }
         }
     }
@@ -109,16 +124,24 @@ nav {
             font-weight: 600;
             margin-bottom: 0;
             font-size: 4.2rem;
-            color: #dde3eb;
+            color: var(--gray500);
             font-family: "Roboto", sans-serif !important;
         }
-        & span {
+        & p{ 
             font-weight: 500;
             font-size: 1.75rem;
             margin-bottom: 0;
-            color: #b3b3b3;
+            color: var(--gray800);
+            font-family: "Poppins", sans-serif;
+            & span {
+            font-weight: 500;
+            font-size: 1.75rem;
+            margin-bottom: 0;
+            color: $tosca;
             font-family: "Poppins", sans-serif;
         }
+        }
+        
         &_social {
             display: flex;
             flex-direction: row;
@@ -126,8 +149,8 @@ nav {
             margin-top: 16px;
             & a {
                 color: black;
-                color: #03d880;
-                & svg {
+                color: $tosca;
+                & i {
                     font-size: 1.5rem;
                     margin-right: 12px;
                 }
@@ -148,20 +171,20 @@ nav {
                 text-transform: uppercase;
                 font-size: 1.25rem;
                 margin-left: 16px;
-                color: #fff;
+                color: var(--light);
             }
-            & svg {
+            & i {
                 font-size: 1.5rem;
-                color: #03d880;
+                color: $tosca;
             }
             &:hover {
                 & span {
-                    color: #03d880;
+                    color: $tosca;
                     transition: all 0.5s;
                 }
-                & svg {
+                & i {
                     transition: all 0.5s;
-                    color: #fff;
+                    color: var(--light);
                     font-size: 1.5rem;
                 }
             }

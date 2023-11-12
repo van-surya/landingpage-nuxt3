@@ -7,7 +7,11 @@
         </div>
         <div class="col-lg-6 hero_caption">
           <h1>Surya Vans</h1>
-          <span>i'am Frontend Developer</span>
+          <p>
+            Hi, I'm a
+            <!-- <span> Frontend Developer</span>  -->
+            <span ref="typedText"></span>
+          </p>
           <div class="hero_caption_social">
             <nuxt-link to="/">
               <i class="fa-brands fa-github"></i>
@@ -40,4 +44,18 @@
 useHead({
   title: "Welcome - Surya Van",
 });
-</script>
+
+import { ref, onMounted } from 'vue';
+import Typed from 'typed.js';
+
+const typedText = ref(null);
+
+onMounted(() => {
+  const typing = new Typed(typedText.value, {
+    strings: ["", "Frontend Developer"],
+    typeSpeed: 100,
+    backSpeed: 40,
+    loop: true,
+  });
+});
+</script> 
