@@ -8,105 +8,26 @@
           nesciunt minus iste a
         </p>
         <div class="row">
-          <div class="col-lg-4 mt-3">
-            <div class="card"> 
-                <img
-                  src="https://images.unsplash.com/photo-1545235617-9465d2a55698?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  alt=""
-                /> 
-              <div class="card-body">
-                <div class="text">
-                  <h5>Title Desc loream</h5>
-                  <a href="">
-                    <span> More Detail </span>
-                    <i class="fa-solid fa-angle-right"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 mt-3">
+          <div
+            v-for="(item, index) in items.slice(0, 6)"
+            :key="index"
+            class="col-lg-4 mt-3"
+          >
             <div class="card">
-              <img
-                src="https://images.unsplash.com/photo-1545235617-9465d2a55698?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt=""
-              />
+              <img :src="item.imageUrl" :alt="item.imageUrl" />
               <div class="card-body">
                 <div class="text">
-                  <h5>Title Desc loream</h5>
-                  <a href="">
-                    <span> More Detail </span>
-                    <i class="fa-solid fa-angle-right"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 mt-3">
-            <div class="card">
-              <img
-                src="https://images.unsplash.com/photo-1545235617-9465d2a55698?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt=""
-              />
-              <div class="card-body">
-                <div class="text">
-                  <h5>Title Desc loream</h5>
-                  <a href="">
-                    <span> More Detail </span>
-                    <i class="fa-solid fa-angle-right"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 mt-3">
-            <div class="card">
-              <img
-                src="https://images.unsplash.com/photo-1545235617-9465d2a55698?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt=""
-              />
-              <div class="card-body">
-                <div class="text">
-                  <h5>Title Desc loream</h5>
-                  <a href="">
-                    <span> More Detail </span>
-                    <i class="fa-solid fa-angle-right"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 mt-3">
-            <div class="card">
-              <img
-                src="https://images.unsplash.com/photo-1545235617-9465d2a55698?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt=""
-              />
-              <div class="card-body">
-                <div class="text">
-                  <h5>Title Desc loream</h5>
-                  <a href="">
-                    <span> More Detail </span>
-                    <i class="fa-solid fa-angle-right"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 mt-3">
-            <div class="card">
-              <img
-                src="https://images.unsplash.com/photo-1545235617-9465d2a55698?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt=""
-              />
-              <div class="card-body">
-                <div class="text">
-                  <h5>Title Desc loream</h5>
-                  <a href="">
-                    <span> More Detail </span>
-                    <i class="fa-solid fa-angle-right"></i>
-                  </a>
+                  <h5>{{ item.title }}</h5>
+                  <div class="social">
+                    <a v-if="!item.codepen" :href="item.youtube" class="me-2">
+                      <i class="fa-brands fa-youtube"></i>
+                      <span>More Link</span>
+                    </a>
+                    <a v-if="item.codepen" :href="item.codepen">
+                      <i class="fa-brands fa-codepen"></i>
+                      <span>More Link</span>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -134,5 +55,44 @@
 useHead({
   title: "Welcome - Surya Van",
 });
+
+const items = [
+  {
+    imageUrl:
+      "https://cdn.dribbble.com/users/9979443/screenshots/17026249/media/aeaee0636e4d56836f9998833f701994.jpg?resize=400x300&vertical=center",
+    title: "Title Desc loream",
+    codepen: "/codepen",
+  },
+  {
+    imageUrl:
+      "https://cdn.dribbble.com/users/9979443/screenshots/17245036/media/73db05760805b027906a509f550f1017.jpg?resize=400x300&vertical=center",
+    title: "Title Desc loream",
+    youtube: "/youtube",
+  },
+  {
+    imageUrl:
+      "https://cdn.dribbble.com/users/9979443/screenshots/17358764/media/e10a43258356cb33949fcb159c8ced13.jpg?resize=400x300&vertical=center",
+    title: "Title Desc loream",
+    codepen: "/codepen",
+  },
+  {
+    imageUrl:
+      "https://cdn.dribbble.com/users/9979443/screenshots/17077622/media/a23310b1005e847a30a17495d7066808.jpg?resize=400x300&vertical=center",
+    title: "Title Desc loream",
+    youtube: "/youtube",
+  },
+  {
+    imageUrl:
+      "https://cdn.dribbble.com/users/9979443/screenshots/17067783/media/a4812e58c67752d9a65913c2bdf8544c.jpg?resize=400x300&vertical=center",
+    title: "Title Desc loream",
+    codepen: "/codepen",
+  },
+  {
+    imageUrl:
+      "https://cdn.dribbble.com/users/9979443/screenshots/17057878/media/f3cd875343f3189449f467c620aebfaf.jpg?resize=400x300&vertical=center",
+    title: "Title Desc loream",
+    codepen: "/codepen",
+  },
+];
 </script>
  
