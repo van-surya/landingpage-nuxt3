@@ -2,9 +2,9 @@
   <div class="hero">
     <div class="container">
       <div class="row">
-        <div class="col-lg-6 hero_image">
+        <!-- <div class="col-lg-6 hero_image">
           <img src="~/assets/images/hero-image.png" alt="" />
-        </div>
+        </div> -->
         <div class="col-lg-6 hero_caption">
           <h1>Surya Vans</h1>
           <p>
